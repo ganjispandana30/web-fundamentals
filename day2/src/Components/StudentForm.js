@@ -3,20 +3,20 @@ import React,{PureComponent} from 'react';
 class StudentForm extends PureComponent{
   constructor()
   { super();
-    this.state={
-      firstname:'',
+    this.state={[
+      firstname:'firstname',
       lastname:'',
       email:'',
       phonenumber:'',
-      address:''}}
+      address:'']}}
 
     firsthandler = (event) => {
       this.setState({
-          firstName: event.target.value
+          firstname: event.target.value
       })}
     lasthandler = (event) => {
         this.setState({
-            lastName: event.target.value
+            lastname: event.target.value
         })}
     emailhandler = (event) => {
           this.setState({
@@ -30,7 +30,7 @@ class StudentForm extends PureComponent{
               this.setState({
                   address: event.target.value
               })}
-
+   
     render(){
     return (   <form>
         
@@ -65,7 +65,7 @@ class StudentForm extends PureComponent{
           Address:
           <input type="text" placeholder='Enter your Address' value= {this.state.address} onChange={this.addresshandler}/>
         </label>
-      <input type="submit" onClick={()=>{}}/>
+      <input type="submit" />
         
       </form>
       );

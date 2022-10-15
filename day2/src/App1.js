@@ -1,7 +1,7 @@
 //import { PureComponent } from "react";
 
 import React,{PureComponent} from 'react';
-import SubmitButton from './Components/SubmitButton'
+
 import AddStudentButton from './Components/AddStudentButton';
 import StudentForm from './Components/StudentForm';
 import StudentList from './Components/StudentList';
@@ -26,7 +26,7 @@ class App1 extends PureComponent{
                 
                 <AddStudentButton onClick={()=>{this.setState({formOpen:!this.state.formOpen})}}/>
                 <StudentForm/>
-                <SubmitButton/>
+                
                 </fieldset>
                 <StudentList/>
                 </div>

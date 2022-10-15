@@ -7,6 +7,8 @@ class StudentList extends PureComponent{
 
 constructor(props){
   super(props);
+  this.state={
+    student: [this.firstname,this.lastname,this.email,this.phonenumber,this.address]}
 }
     
     
@@ -21,11 +23,11 @@ constructor(props){
     <th>Address</th>
   </tr>
   <tr>
-    <td>{this.props.firstname}</td>
-    <td>{this.props.lastname}</td>
-    <td>{this.props.email}</td>
-    <td>{this.props.phonenumber}</td>
-    <td>{this.props.address}</td>
+    <td>{this.state.student.firstname}</td>
+    <td>{this.state.student.lastname}</td>
+    <td>{this.state.student.email}</td>
+    <td>{this.state.student.phonenumber}</td>
+    <td>{this.state.student.address}</td>
   </tr>
   
     </table>);}
