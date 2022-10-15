@@ -3,12 +3,12 @@ import React,{PureComponent} from 'react';
 class StudentForm extends PureComponent{
   constructor()
   { super();
-    this.state={[
-      firstname:'firstname',
+    this.state={ 
+      firstname:'',
       lastname:'',
       email:'',
       phonenumber:'',
-      address:'']}}
+      address:''}}
 
     firsthandler = (event) => {
       this.setState({
@@ -30,26 +30,32 @@ class StudentForm extends PureComponent{
               this.setState({
                   address: event.target.value
               })}
+    Submithandler=(event) =>{
+      event.save();
+      
+    }
    
     render(){
-    return (   <form>
+    return (   
+    <div><h2>Student Form</h2>
+    <form>
         
         <label>
           First Name:
-          <input type="text" placeholder='Enter your First Name' value= {this.state.firstName} onChange={this.firsthandler} />
+          <input type="text" placeholder='Enter your First Name' value= {this.state.firstname} onChange={this.firsthandler} />
         </label>
        
         <br/>
       
         <label>
           Last Name:
-          <input type="text" placeholder='Enter your Last name' value= {this.state.lastName} onChange={this.lasthandler} />
+          <input type="text" placeholder='Enter your Last name' value= {this.state.lastname} onChange={this.lasthandler} />
         </label>
         <br/>
         
         <label>
           Email:
-          <input type="email" placeholder='Enter your Email'  value= {this.state.email} onChange={this.emailhandler}/>
+          <input type="text" placeholder='Enter your Email'  value= {this.state.email} onChange={this.emailhandler}/>
         </label>
         
         <br/>
@@ -58,16 +64,16 @@ class StudentForm extends PureComponent{
           Phone number:
           <input type="text" placeholder='Enter your Phone number' value= {this.state.phonenumber} onChange={this.phonehandler}/>
         </label>
-
         <br/>
         
         <label>
           Address:
           <input type="text" placeholder='Enter your Address' value= {this.state.address} onChange={this.addresshandler}/>
         </label>
-      <input type="submit" />
+      <input type="submit" onChange={this.Submithandler}/>
         
       </form>
+      </div>
       );
 
     }
