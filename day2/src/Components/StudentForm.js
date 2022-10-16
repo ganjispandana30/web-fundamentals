@@ -1,4 +1,3 @@
-import { toBeEmpty } from '@testing-library/jest-dom/dist/matchers';
 import React,{PureComponent} from 'react';
 
 
@@ -36,14 +35,14 @@ class StudentForm extends PureComponent{
               })}
     Submithandler=(event) =>{
       event.preventDefault();
-      console.log("hello");
+     
     let temp=
     {firstname:this.state.firstname,
     lastname:this.state.lastname,
   email:this.state.email,
 phonenumber:this.state.phonenumber,
 address:this.state.address}
-console.log(temp,"hi");
+
       this.props.addstudent(temp);
     }
    
