@@ -1,6 +1,7 @@
 import React,{PureComponent} from 'react';
 
 
+
 class StudentForm extends PureComponent{
   constructor(props)
   { super(props);
@@ -85,6 +86,7 @@ address:this.state.address}
      <input type="submit" />
         
       </form>
+      
       </div>
       
       );

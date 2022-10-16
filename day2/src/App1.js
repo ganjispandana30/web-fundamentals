@@ -1,11 +1,10 @@
-//import { PureComponent } from "react";
 
 import React,{PureComponent} from 'react';
 import {Button} from 'antd'
 
 
-import StudentForm from './Components/StudentForm';
-import StudentList from './Components/StudentList';
+import {StudentForm,StudentList} from './Components/index';
+
 
 
 class App1 extends PureComponent{
@@ -18,19 +17,24 @@ class App1 extends PureComponent{
 addstudent=(user)=>{
    let copyuser=Object.assign([],this.state.list);
     copyuser.push(user)
-    this.setState({list:copyuser});
+    this.setState({list:copyuser});  
 } 
+
+buttonhandler =()=>{
+    this.setState({formOpen:!this.state.formOpen});
+}
 
 
     render(){
         return <div >
-            
-                {this.state.formOpen && <StudentForm addstudent={this.addstudent}/>} 
+                <Button type="primary" style={{float: 'right'}} onClick={this.buttonhandler}>Add Student</Button>
+                {this.state.formOpen && <StudentForm addstudent={this.addstudent}/>}
+                {this.state.formOpen || <StudentList list={this.state.list} addstudent={this.addstudent}/> }
+                 
+                
+       
                 
                 
-                <Button type="primary" style={{float: 'right'}} onClick={()=>{this.setState({formOpen:!this.state.formOpen})}}>Add Student</Button>
-            
-                <StudentList list={this.state.list} addstudent={this.addstudent}/>  
 
                 </div>
     }

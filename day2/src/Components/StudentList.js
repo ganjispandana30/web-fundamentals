@@ -7,8 +7,7 @@ class StudentList extends PureComponent{
 
 constructor(props){
   super(props);
-//  this.state={comp1fun}
- //   student: [this.firstname,this.lastname,this.email,this.phonenumber,this.address]}
+
 }
     
     
@@ -16,10 +15,10 @@ constructor(props){
     render(){
       
     return (
-    <div>
-      <table>
+    <div className='table'>
+      <table className='table'>
      
-      <tr >
+      <tr className='table'>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email</th>
@@ -31,15 +30,16 @@ constructor(props){
       {
       
     this.props.list.map((user,index)=>
-    <table>
+    <table >
       
   <tr key={index}>
-    <th>{user.firstname}</th>
-    <th>{user.lastname}</th>
-    <th>{user.email}</th>
-    <th>{user.phonenumber}</th>
-    <th>{user.address}</th>
+    <td>{user.firstname}</td>
+    <td>{user.lastname}</td>
+    <td>{user.email}</td>
+    <td>{user.phonenumber}</td>
+    <td>{user.address}</td>
   </tr>
+  <br/>
   
   
     </table>)}
