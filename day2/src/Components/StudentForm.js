@@ -1,14 +1,18 @@
+import { toBeEmpty } from '@testing-library/jest-dom/dist/matchers';
 import React,{PureComponent} from 'react';
 
+
 class StudentForm extends PureComponent{
-  constructor()
-  { super();
-    this.state={ 
+  constructor(props)
+  { super(props);
+    this.state={
       firstname:'',
       lastname:'',
       email:'',
       phonenumber:'',
-      address:''}}
+      address:''
+    }
+   }
 
     firsthandler = (event) => {
       this.setState({
@@ -31,49 +35,59 @@ class StudentForm extends PureComponent{
                   address: event.target.value
               })}
     Submithandler=(event) =>{
-      event.save();
-      
+      event.preventDefault();
+      console.log("hello");
+    let temp=
+    {firstname:this.state.firstname,
+    lastname:this.state.lastname,
+  email:this.state.email,
+phonenumber:this.state.phonenumber,
+address:this.state.address}
+console.log(temp,"hi");
+      this.props.addstudent(temp);
     }
    
     render(){
     return (   
     <div><h2>Student Form</h2>
-    <form>
+    
+    <form onSubmit={this.Submithandler}>
         
         <label>
           First Name:
-          <input type="text" placeholder='Enter your First Name' value= {this.state.firstname} onChange={this.firsthandler} />
+          <input type="text" placeholder='Enter your First Name' value= {this.props.firstname} onChange={this.firsthandler} />
         </label>
        
         <br/>
       
         <label>
           Last Name:
-          <input type="text" placeholder='Enter your Last name' value= {this.state.lastname} onChange={this.lasthandler} />
+          <input type="text" placeholder='Enter your Last name' value= {this.props.lastname} onChange={this.lasthandler} />
         </label>
         <br/>
         
         <label>
           Email:
-          <input type="text" placeholder='Enter your Email'  value= {this.state.email} onChange={this.emailhandler}/>
+          <input type="text" placeholder='Enter your Email'  value= {this.props.email} onChange={this.emailhandler}/>
         </label>
         
         <br/>
       
         <label>
           Phone number:
-          <input type="text" placeholder='Enter your Phone number' value= {this.state.phonenumber} onChange={this.phonehandler}/>
+          <input type="text" placeholder='Enter your Phone number' value= {this.props.phonenumber} onChange={this.phonehandler}/>
         </label>
         <br/>
         
         <label>
           Address:
-          <input type="text" placeholder='Enter your Address' value= {this.state.address} onChange={this.addresshandler}/>
+          <input type="text" placeholder='Enter your Address' value= {this.props.address} onChange={this.addresshandler}/>
         </label>
-      <input type="submit" onChange={this.Submithandler}/>
+     <input type="submit" />
         
       </form>
       </div>
+      
       );
 
     }
