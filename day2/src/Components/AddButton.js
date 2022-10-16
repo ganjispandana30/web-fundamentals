@@ -5,7 +5,6 @@ class AddButton extends PureComponent{
     constructor(props) {
         super(props);
         this.state = {formOpen : false};
-    
       }
 
 
