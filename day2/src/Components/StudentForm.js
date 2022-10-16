@@ -68,7 +68,7 @@ address:this.state.address}
         
         <label>
           Email:
-          <input type="text" placeholder='Enter your Email'  value= {this.props.email} onChange={this.emailhandler}/>
+          <input type="email" placeholder='Enter your Email'  value= {this.props.email} onChange={this.emailhandler}/>
         </label>
         
         <br/>
