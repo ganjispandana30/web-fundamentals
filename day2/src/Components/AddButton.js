@@ -7,8 +7,6 @@ class AddButton extends PureComponent{
         this.state = {formOpen : false};
     
       }
-    
-
 
 
     render(){
