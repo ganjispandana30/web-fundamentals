@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Modal from "antd/lib/modal/Modal";
+import axios from "axios";
 
 const User = (props) => {
   const [uid, setUid]=useState(props.user.uid);
